@@ -25,8 +25,8 @@
             display-name = "Base";
             bindings = <
 &kp ESC      &kp LS(N1) &kp LS(N2) &kp LS(N3)   &kp LS(N4)   &kp LS(N5)                     &kp LS(N6)  &kp LS(N7)   &kp LS(N8)    &kp LS(N9)  &kp LS(N0)   &trans
-&kp TAB      &kp N0  &kp J  &kp O    &kp N2    &kp B                      &kp F   &kp D    &kp L     &kp N4   &kp Q    &trans
-&kp RSHIFT   &kp A   &kp I  &kp E    &kp U    &kp COMMA                   &kp P   &kp T    &kp S     &kp R    &kp N    &trans
+&kp TAB      &kp N0  &kp J  &kp O    &kp N2    &kp B                      &kp F   &kp D    &kp L     &kp N4   &kp A    &trans
+&kp RSHIFT   &kp Q   &kp I  &kp E    &kp U    &kp LS(COMMA)                   &kp P   &kp T    &kp S     &kp R    &kp N    &trans
 &kp LCTRL    &kp Y   &kp RA(N7) &kp DOT &kp W &kp K &mo 3   &mo 4    &kp G   &kp C    &kp M     &kp H    &kp V    &trans
                     &kp LALT &kp BSPC &mo 1  &kp SPACE                  &kp RET &mo 2  &kp BSPC &kp RGUI
             >;
@@ -45,7 +45,7 @@
             bindings = <
 &trans     &trans  &trans &trans            &trans       &trans                       &trans    &trans    &trans     &trans    &trans     &trans 
 &trans     &kp LS(N0)  &kp LS(J)   &kp LS(O)    &kp LS(N2)    &kp LS(B)                      &kp LS(F)   &kp LS(D)    &kp LS(L)     &kp LS(N4)   &kp LS(Q)    &trans
-&trans     &kp LS(A)   &kp LS(I)   &kp LS(E)    &kp LS(U)    &kp LS(COMMA)                   &kp LS(P)   &kp LS(T)    &kp LS(S)     &kp LS(R)    &kp LS(N)    &trans
+&trans     &kp LS(A)   &kp LS(I)   &kp LS(E)    &kp LS(U)    &kp COMMA                   &kp LS(P)   &kp LS(T)    &kp LS(S)     &kp LS(R)    &kp LS(N)    &trans
 &trans     &kp LS(Y)   &kp LS(RA(N7)) &kp LS(DOT) &kp LS(W) &kp LS(K) &trans   &trans    &kp LS(G)   &kp LS(C)    &kp LS(M)     &kp LS(H)    &kp LS(V)    &trans
                                               &trans            &trans       &trans    &trans   &trans    &trans    &trans    &trans
             >;
