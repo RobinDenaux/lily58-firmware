@@ -23,7 +23,7 @@
 
 / {
 	behaviors  {
-		num1: sft_eaigue {
+		sft_eaigue: sft_eaigue {
 			compatible = "zmk,behavior-mod-morph";
 			#binding-cells = <0>;
 			bindings = <&kp N2>, <&maj_eaigue>;
