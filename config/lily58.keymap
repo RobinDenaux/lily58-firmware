@@ -15,7 +15,7 @@
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings 	= <&macro_press &kp LALT>
-						, <&macro_tap &kp LS(N1) &kp LS(N4) &kp LS(N4)>
+						, <&macro_tap &kp LS(KP_N1) &kp LS(KP_N4) &kp LS(KP_N4)>
 						, <&macro_release &kp LALT> ;
 		};
 	};
@@ -46,7 +46,7 @@
             display-name = "Base";
             bindings = <
 &kp ESC      &kp LS(N1) &kp LS(N2) &kp LS(N3) &kp LS(N4) &kp LS(N5)       &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N0) &trans
-&kp TAB      &kp N0  &kp J  &kp O    &sft_eaigue    &kp B                      &kp F   &kp D    &kp L     &kp N4   &kp Q    &kp X
+&kp TAB      &kp N0  &kp J  &kp O    &sft_eaigue    &kp B                 &kp F   &kp D    &kp L     &kp N4   &kp Q    &kp X
 &kp LCTRL    &kp Q   &kp I  &kp E    &kp U    &kp LS(COMMA)               &kp P   &kp T    &kp S     &kp R    &kp N    &trans
 &kp LSHIFT   &kp K   &kp Y &kp N7 &kp DOT &kp W      &mo 3   &mo 2    &kp G   &kp C    &kp M     &kp H    &kp V    &kp Z
                               &kp LALT &kp RGUI &kp BSPC  &kp SPACE  &kp RET &mo 1  &kp BSPC &kp LS(N9)
