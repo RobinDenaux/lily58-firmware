@@ -104,24 +104,6 @@
 			bindings = <&kp COMMA>, <&maj_eaigue>;
 			mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
-		sft_eaigue: sft_eaigue {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&kp N2>, <&maj_eaigue>;
-			mods = <(MOD_LSFT|MOD_RSFT)>;
-		};
-		sft_eaigue: sft_eaigue {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&kp N2>, <&maj_eaigue>;
-			mods = <(MOD_LSFT|MOD_RSFT)>;
-		};
-		sft_eaigue: sft_eaigue {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&kp N2>, <&maj_eaigue>;
-			mods = <(MOD_LSFT|MOD_RSFT)>;
-		};
 		sft_sqt: sft_sqt {
 			compatible = "zmk,behavior-mod-morph";
 			#binding-cells = <0>;
