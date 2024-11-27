@@ -23,8 +23,8 @@
 		maj_egrave: maj_egrave {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
-			wait-ms = <3>;
-			tap-ms = <3>;
+			wait-ms = <2>;
+			tap-ms = <2>;
 			bindings 	= <&macro_press &kp LALT>
 						, <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N0 &kp KP_N0>
 						, <&macro_release &kp LALT> ;
@@ -32,8 +32,8 @@
 		maj_agrave: maj_agrave {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
-			wait-ms = <4>;
-			tap-ms = <4>;
+			wait-ms = <2>;
+			tap-ms = <2>;
 			bindings 	= <&macro_press &kp LALT>
 						, <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N2>
 						, <&macro_release &kp LALT> ;
@@ -41,8 +41,8 @@
 		maj_ccedille: maj_ccedille {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
-			wait-ms = <5>;
-			tap-ms = <5>;
+			wait-ms = <2>;
+			tap-ms = <2>;
 			bindings 	= <&macro_press &kp LALT>
 						, <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N9>
 						, <&macro_release &kp LALT> ;
@@ -50,8 +50,8 @@
 		maj_ugrave: maj_ugrave {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
-			wait-ms = <6>;
-			tap-ms = <6>;
+			wait-ms = <2>;
+			tap-ms = <2>;
 			bindings 	= <&macro_press &kp LALT>
 						, <&macro_tap &kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N7>
 						, <&macro_release &kp LALT> ;
@@ -135,13 +135,13 @@
 &kp ESC      &kp LS(N1)  &kp LS(N2) &kp LS(N3)  &kp LS(N4)  &kp LS(N5)                  &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N0) &sft_ugrave
 &kp TAB      &sft_agrave &kp J      &kp O       &sft_eaigue &kp B                       &kp F      &kp D      &kp L      &sft_sqt   &kp A      &kp X
 &kp LCTRL    &kp Q       &kp I      &kp E       &kp U       &sft_comma                  &kp P      &kp T      &kp S      &kp R      &kp N      &sft_caret
-&kp LSHIFT   &kp K       &kp Y      &sft_egrave &sft_dot    &kp W      &mo 3   &mo 2    &kp G      &kp C      &kp EXCL   &kp H      &kp V      &kp Z
+&kp LSHIFT   &kp K       &kp Y      &sft_egrave &sft_dot    &kp Z      &mo 3   &mo 2    &kp G      &kp C      &kp SEMI   &kp H      &kp V      &kp W
                               &kp LALT &kp RGUI &kp BSPC  &kp SPACE  &kp RET &mo 1  &kp RSHIFT &sft_ccedille
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
-
+		
 // MAJ
 // ------------------------------------------------------------------------------------------------------------
 // |       |     |     |      |      |      |                   |      |       |       |      |       |   ù  |
