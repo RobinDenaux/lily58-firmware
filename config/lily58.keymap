@@ -107,7 +107,7 @@
 		sft_sqt: sft_sqt {
 			compatible = "zmk,behavior-mod-morph";
 			#binding-cells = <0>;
-			bindings = <&kp N4>, <&kp M>;
+			bindings = <&kp N4>, <&kp LS(M)>;
 			mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
 		sft_caret: sft_caret {
