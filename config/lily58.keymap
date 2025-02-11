@@ -65,6 +65,15 @@
 						, <&macro_tap &kp KP_N6 &kp KP_N3>
 						, <&macro_release &kp LALT> ;
 		};
+		maj_exclam: maj_exclam {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			wait-ms = <1>;
+			tap-ms = <1>;
+			bindings 	= <&macro_press &kp LALT>
+						, <&macro_tap &kp KP_N1 &kp KP_N7 &kp KP_N3>
+						, <&macro_release &kp LALT> ;
+		};
 	};
 };
 
@@ -88,16 +97,23 @@
 			bindings = <&kp N0>, <&maj_agrave>;
 			mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
-		sft_ccedille: sft_ccedille {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&kp N9>, <&maj_ccedille>;
-			mods = <(MOD_LSFT|MOD_RSFT)>;
-		};
+		
+//		sft_ccedille: sft_ccedille {
+//			compatible = "zmk,behavior-mod-morph";
+//			#binding-cells = <0>;
+//			bindings = <&kp N9>, <&maj_ccedille>;
+//			mods = <(MOD_LSFT|MOD_RSFT)>;
+//		};
+//		sft_ugrave: sft_ugrave {
+//			compatible = "zmk,behavior-mod-morph";
+//			#binding-cells = <0>;
+//			bindings = <&kp APOS>, <&maj_ugrave>;
+//			mods = <(MOD_LSFT|MOD_RSFT)>;
+//		};
 		sft_ugrave: sft_ugrave {
 			compatible = "zmk,behavior-mod-morph";
 			#binding-cells = <0>;
-			bindings = <&kp APOS>, <&maj_ugrave>;
+			bindings = <&kp APOS>, <&maj_ccedille>;
 			mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
 		
@@ -116,13 +132,19 @@
 		sft_sqt: sft_sqt {
 			compatible = "zmk,behavior-mod-morph";
 			#binding-cells = <0>;
-			bindings = <&kp N4>, <&maj_question>;
+			bindings = <&kp N4>, <&kp N3>;
 			mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
 		sft_caret: sft_caret {
 			compatible = "zmk,behavior-mod-morph";
 			#binding-cells = <0>;
 			bindings = <&kp LBKT>, <&kp FSLH>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+		sft_exclam: sft_exclam {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&maj_question>, <&maj_exclam>;
 			mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
 	};
@@ -138,14 +160,14 @@
 // |  TAB  |  à  |  j  |  o   |  é   |  b   |                   |  f   |  d    |  l    |  '   |   q   |   x  |
 // |  CTRL |  a  |  i  |  e   |  u   |  ,   |                   |  p   |  t    |  s    |  r   |   n   |   ^  |
 // | SHIFT |  k  |  y  |  è   |  .   |  w   |   "BT"  |  | "FN" |  g   |  c    |  m    |  h   |   v   |   z  |
-//                     | ALT  | GUI  | BSPC |  SPACE |  | ENTER | SHIFT  | DEV  |  ç    |
+//                     | ALT  | GUI  | BSPC |  SPACE |  | ENTER | SHIFT  | DEV  |  ?    |
             display-name = "Base";
             bindings = <
 &kp ESC      &kp LS(N1)  &kp LS(N2) &kp LS(N3)  &kp LS(N4)  &kp LS(N5)                  &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N0) &sft_ugrave
 &kp TAB      &sft_agrave &kp J      &kp O       &sft_eaigue &kp B                       &kp F      &kp D      &kp L      &sft_sqt   &kp A      &kp X
-&kp LCTRL    &kp Q       &kp I      &kp E       &kp U       &sft_comma                  &kp P      &kp T      &kp S      &kp R      &kp N      &sft_caret
+&kp LCTRL    &kp Q       &kp I      &kp E       &kp U       &sft_comma                  &kp P      &kp T      &kp S      &kp R      &kp N      &kp LBKT
 &kp LSHIFT   &kp K       &kp Y      &sft_egrave &sft_dot    &kp Z      &mo 3   &mo 2    &kp G      &kp C      &kp SEMI   &kp H      &kp V      &kp W
-                                    &kp LALT    &kp RGUI    &kp BSPC  &kp SPACE &kp RET &kp RSHIFT &mo 1      &sft_ccedille
+                                    &kp LALT    &kp RGUI    &kp BSPC  &kp SPACE &kp RET &kp RSHIFT &mo 1      &sft_exclam
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -153,18 +175,11 @@
 		
 // MAJ
 // ------------------------------------------------------------------------------------------------------------
-// |       |     |     |      |      |      |                   |      |       |       |      |       |   ù  |
+// |       |     |     |      |      |      |                   |      |       |       |      |       |   ç  |
 // |       |  à  |     |      |  é   |      |                   |      |       |       |  ?   |       |      |
-// |       |     |     |      |      |  ;   |                   |      |       |       |      |       |   !  |
+// |       |     |     |      |      |  ;   |                   |      |       |       |      |       |   ¨  |
 // |       |     |     |  è   |  :   |      |        |  |       |      |       |       |      |       |      |
-//                     |      |      |      |        |  |       |      |       |   ç   |
-// CTRL
-// ------------------------------------------------------------------------------------------------------------
-// |       |     |     |      |      |      |                   |      |       |       |      |       |      |
-// |       |     |     |      |      |      |                   |      |  deb  |       |  pup |       |      |
-// |       |     |     |      |      |      |                   |      |  fin  |  up   | pdown|       |      |
-// |       |     |     |      |      |      |        |  |       |      | left  | down  | right|       |      |
-//                     |      |      |      |        |  |       |      |       |       |
+//                     |      |      |      |        |  |       |      |       |   !   |
 
 
         dev_layer {
