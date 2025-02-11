@@ -71,7 +71,7 @@
 			wait-ms = <1>;
 			tap-ms = <1>;
 			bindings 	= <&macro_press &kp LALT>
-						, <&macro_tap &kp KP_N1 &kp KP_N7 &kp KP_N3>
+						, <&macro_tap &kp KP_N3 &kp KP_N3>
 						, <&macro_release &kp LALT> ;
 		};
 	};
@@ -113,7 +113,7 @@
 		sft_ugrave: sft_ugrave {
 			compatible = "zmk,behavior-mod-morph";
 			#binding-cells = <0>;
-			bindings = <&kp APOS>, <&maj_ccedille>;
+			bindings = <&kp APOS>, <&kp N9>;
 			mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
 		
