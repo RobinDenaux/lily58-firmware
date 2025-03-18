@@ -74,6 +74,20 @@
 						, <&macro_tap &kp KP_N3 &kp KP_N3>
 						, <&macro_release &kp LALT> ;
 		};
+		f_layer: f_layer {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			wait-ms = <1>;
+			tap-ms = <1>;
+			bindings 	= <&macro_tap &mo 2>;
+		};
+		f_toggle_layer: f_toggle_layer {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			wait-ms = <1>;
+			tap-ms = <1>;
+			bindings 	= <&macro_tap &tog 2>;
+		};
 	};
 };
 
@@ -147,6 +161,28 @@
 			bindings = <&maj_question>, <&maj_exclam>;
 			mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
+		
+		ctrl_x: ctrl_x {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp J>, <&kp X>;
+			mods = <(MOD_LCTL|MOD_RCTL)>;
+            keep-mods = <(MOD_LCTL|MOD_RCTL)>;
+		};
+		ctrl_c: ctrl_c {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp O>, <&kp C>;
+			mods = <(MOD_LCTL|MOD_RCTL)>;
+            keep-mods = <(MOD_LCTL|MOD_RCTL)>;
+		};
+		ctrl_v: ctrl_v {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&sft_eaigue>, <&kp V>;
+			mods = <(MOD_LCTL|MOD_RCTL)>;
+            keep-mods = <(MOD_LCTL|MOD_RCTL)>;
+		};
 	};
 };
 
@@ -160,14 +196,14 @@
 // |  TAB  |  à  |  j  |  o   |  é   |  b   |                   |  f   |  d    |  l    |  '   |   q   |   x  |
 // |  CTRL |  a  |  i  |  e   |  u   |  ,   |                   |  p   |  t    |  s    |  r   |   n   |   ^  |
 // | SHIFT |  k  |  y  |  è   |  .   |  w   |   "BT"  |  | "FN" |  g   |  c    |  m    |  h   |   v   |   z  |
-//                     | ALT  | GUI  | BSPC |  SPACE |  | ENTER | SHIFT  | DEV  |  ?    |
+//                     | GUI  |  ALT | BSPC |  SPACE |  | ENTER | SHIFT  | DEV  |  ?    |
             display-name = "Base";
             bindings = <
 &kp ESC      &kp LS(N1)  &kp LS(N2) &kp LS(N3)  &kp LS(N4)  &kp LS(N5)                  &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N0) &sft_ugrave
-&kp TAB      &sft_agrave &kp J      &kp O       &sft_eaigue &kp B                       &kp F      &kp D      &kp L      &sft_sqt   &kp A      &kp X
+&kp TAB      &sft_agrave &ctrl_x    &ctrl_c     &ctrl_v     &kp B                       &kp F      &kp D      &kp L      &sft_sqt   &kp A      &kp X
 &kp LCTRL    &kp Q       &kp I      &kp E       &kp U       &sft_comma                  &kp P      &kp T      &kp S      &kp R      &kp N      &kp LBKT
-&kp LSHIFT   &kp K       &kp Y      &sft_egrave &sft_dot    &kp Z      &mo 3   &mo 2    &kp G      &kp C      &kp SEMI   &kp H      &kp V      &kp W
-                                    &kp LALT    &kp RGUI    &kp BSPC  &kp SPACE &kp RET &kp RSHIFT &mo 1      &sft_exclam
+&kp LSHIFT   &kp K       &kp Y      &sft_egrave &sft_dot    &kp Z      &mo 3   &mt &mo 2 &tog 2    &kp G      &kp C      &kp SEMI   &kp H      &kp V      &kp W
+                                    &kp RGUI    &kp LALT    &kp BSPC  &kp SPACE &kp RET &kp RSHIFT &mo 1      &sft_exclam
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -176,7 +212,7 @@
 // MAJ
 // ------------------------------------------------------------------------------------------------------------
 // |       |     |     |      |      |      |                   |      |       |       |      |       |   ç  |
-// |       |  à  |     |      |  é   |      |                   |      |       |       |  ?   |       |      |
+// |       |  à  |     |      |  é   |      |                   |      |       |       |  "   |       |      |
 // |       |     |     |      |      |  ;   |                   |      |       |       |      |       |   ¨  |
 // |       |     |     |  è   |  :   |      |        |  |       |      |       |       |      |       |      |
 //                     |      |      |      |        |  |       |      |       |   !   |
@@ -186,14 +222,14 @@
 // ------------------------------------------------------------------------------------------------------------
 // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
 // |       |  {  |  }  |   \  |  /   |   _  |                   |      |   $   |   €   |  £   |       |       |
-// |       |  (  |  )  |   -  |  +   |   =  |                   |      |   @   |   "   |  %   |   #   |       |
+// |       |  (  |  )  |   -  |  +   |   =  |                   |      |   @   |   &   |  %   |   #   |       |
 // |       |  [  |  ]  |   <  |  >   |   *  |        |  |       |      |   ~   |   `   |      |       |       |
 //                     |      |      |      |        |  |       |      |       |       |
             display-name = "Dev";
             bindings = <
 &trans     &trans     &trans        &trans        &trans       &trans                         &trans    &trans    &trans          &trans       &trans    &trans
 &trans     &kp RA(N4) &kp RA(EQUAL) &kp RA(N8)    &kp LS(DOT)  &kp N8                         &none     &kp RBKT  &kp RA(E)       &kp LS(RBKT) &none     &trans
-&trans     &kp N5     &kp MINUS     &kp N6        &kp LS(EQUAL) &kp EQUAL                     &none     &kp RA(N0) &kp N3         &kp LS(DQT)  &kp RA(N3) &trans
+&trans     &kp N5     &kp MINUS     &kp N6        &kp LS(EQUAL) &kp EQUAL                     &none     &kp RA(N0) &kp N1         &kp LS(DQT)  &kp RA(N3) &trans
 &trans     &kp RA(N5) &kp RA(MINUS) &kp NUBS      &kp LS(NUBS) &kp BSLH    &trans   &trans    &none     &kp RA(N2) &kp RA(N7)     &none        &none     &trans
                                     &trans        &trans       &trans      &trans   &trans    &trans    &trans    &trans
             >;
@@ -205,14 +241,14 @@
 // ------------------------------------------------------------------------------------------------------------
 // |  F1 |  F2 |  F3 |  F4  |  F5 |  F6 |                   |  F7 |  F8 |  F9 | F10 | F11 | F12 |
 // |     | pup |start|  up  | end |pdown|                   |     |     |     |     |     |     |
-// |     |     |left | down |right|     |                   |     |     |     |     |     |     |
+// |     | BSPC|left | down |right|SUPPR|                   |     |     |     |     |     |     |
 // |     |     |     |      |     |     |        |  |       |     |     |     |     |     |     |
 //                   |      |     |     |        |  |       |     |     |     |
             display-name = "Func";
             bindings = <
 &kp F1 &kp F2    &kp F3   &kp F4     &kp F5     &kp F6                      &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
 &trans &kp PG_UP &kp HOME &kp UP     &kp END    &kp PG_DN                 &trans &trans &trans &trans &trans &trans
-&trans &trans    &kp LEFT &kp DOWN   &kp RIGHT  &trans                      &trans &trans &trans &trans &trans &trans
+&trans &kp BSPC  &kp LEFT &kp DOWN   &kp RIGHT  &kp DEL                   &trans &trans &trans &trans &trans &trans
 &trans &trans    &trans   &trans     &trans     &trans    &trans   &trans   &trans &trans &trans &trans &trans &trans
                           &none      &none      &none     &none    &none    &none  &none  &none
             >;
